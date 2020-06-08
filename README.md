@@ -3,7 +3,7 @@
 
 ## Objetivos do sistema
 
-	Ifome é um aplicativo de entrega de comida online, <br>
+	Ifome é um aplicativo de entrega de comida online,
 no qual um cliente, previamente cadastrado, pode<br>
 solicitar uma lista de pedidos mediante pagamento.<br>
 O aplicativo é de uma rede de restaurantes de uma cidade, que <br>
