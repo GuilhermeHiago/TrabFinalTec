@@ -3,7 +3,16 @@
 
 ## Objetivos do sistema
 
-	O sistema deve funcionar como um restaurante online, onde o usuário pesquisa pelas categorias ou por nome o que deseja comer. Após escolhido, ele adiciona o produto no carrinho e é entregue a ele no endereço especificado no seu cadastro.
+	Ifome é um aplicativo de entrega de comida online,<br>
+no qual um cliente, previamente cadastrado, pode<br>
+solicitar uma lista de pedidos mediante pagamento.<br>
+O aplicativo é de uma rede de restaurantes de uma cidade, que <br>
+ao receber um pedido escolhe o restaurante mais proximo ao <br>
+cliente, que possui o pedido e aceita o tipo de pagamento <br>
+escolhido, para realizar a entrega, cobrando 5 reais a cada <br>
+10 km de distancia necessarias á percorrer. <br>
+Cada restaurante e cliente possui o seu "Ponto" <br>
+(representação da coordenada do gps), para calcular a distancia <br>
 
 ## Relações de funcionalidade
 	
