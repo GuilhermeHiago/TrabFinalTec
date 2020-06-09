@@ -10,7 +10,7 @@ O aplicativo é de uma rede de restaurantes de uma cidade, que <br>
 ao receber um pedido escolhe o restaurante mais proximo ao <br>
 cliente, que possui o pedido e aceita o tipo de pagamento <br>
 escolhido, para realizar a entrega, cobrando uma taxa fixa, 
-dependendo do CEP do cliente.
+dependendo da distacia do cliente em relação ao restaurante.
 
 ## Relações de funcionalidade
 O Ifome conta com uma página inicial composta pelos menus <br>
