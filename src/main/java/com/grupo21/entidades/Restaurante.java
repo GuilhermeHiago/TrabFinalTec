@@ -1,9 +1,12 @@
 package com.grupo21.entidades;
 
+import java.util.List;
+
 public class Restaurante {
     String nome;
     int cnpj;
     Posicao pos;
+    List<Produto> produtos;
 
     public Restaurante(String nome, int cnpj, Posicao pos){
         this.nome = nome;
