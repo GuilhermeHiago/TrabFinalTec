@@ -1,8 +1,12 @@
 package com.grupo21.casosDeUso.Politicas;
 
 import com.grupo21.entidades.Posicao;
+
+import org.springframework.stereotype.Component;
+
 import java.lang.Math;
 
+@Component
 public class CalculaCustoViagem implements CustoViagem{
     @Override
     public double get_valor(Posicao restaurante_pos, Posicao cliente_pos) {

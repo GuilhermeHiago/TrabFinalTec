@@ -4,11 +4,11 @@ import java.util.List;
 
 public class Restaurante {
     String nome;
-    int cnpj;
+    String cnpj;
     Posicao pos;
     List<Produto> produtos;
 
-    public Restaurante(String nome, int cnpj, Posicao pos){
+    public Restaurante(String nome, String cnpj, Posicao pos){
         this.nome = nome;
         this.cnpj = cnpj;
         this.pos = pos;
@@ -18,7 +18,7 @@ public class Restaurante {
         return nome;
     }
 
-    public int getCnpj() {
+    public String getCnpj() {
         return cnpj;
     }
 

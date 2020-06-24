@@ -1,17 +1,26 @@
 package com.grupo21.interfaces.Persistencia;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.grupo21.casosDeUso.Repositorios.RepositorioProdutos;
 import com.grupo21.entidades.Produto;
 
-public class RepositorioProdutoImpMem implements RepositorioProdutos {
-    
-    public RepositorioProdutoImpMem(){
+import org.springframework.stereotype.Component;
 
+@Component
+public class RepositorioProdutoImpMem implements RepositorioProdutos {
+    private final Map<String, Produto> produtos;
+
+    public RepositorioProdutoImpMem() {
+        produtos = new HashMap<>();
+
+        produtos.put("Prato1", new Produto("Prato1", 35.50));
+        produtos.put("Prato2", new Produto("Prato2", 15.50));
+        produtos.put("Prato3", new Produto("Prato3", 55.50));
     }
 
-    public Produto recuperaPorNome(String nome){
-        Produto r = null;
-
-        return r;
+    public Produto recuperaPorNome(final String nome) {
+        return produtos.get(nome);
     }
 }

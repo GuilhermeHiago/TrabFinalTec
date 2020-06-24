@@ -4,6 +4,10 @@ public class Posicao {
     private int x;
     private int y;
 
+    public Posicao(int x, int y){
+
+    }
+
     public void setX(int x) {
         this.x = x;
     }

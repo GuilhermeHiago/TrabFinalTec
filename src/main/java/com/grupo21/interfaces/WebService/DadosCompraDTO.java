@@ -2,6 +2,9 @@ package com.grupo21.interfaces.WebService;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class DadosCompraDTO {
     private String nomeRestaurante;
     private List<String> nomeProd;

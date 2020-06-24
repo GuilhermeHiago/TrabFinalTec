@@ -18,12 +18,20 @@ public class Pedido {
         return itens;
     }
 
-    public void addItemPedido(ItemPedido item){
+    public ItemPedido addItemPedido(String nome, double valor, int quantidade){
+        ItemPedido item = new ItemPedido(nome, quantidade, valor);
         itens.add(item);
+        return item;
     }
 
-    public void removeItemPedido(ItemPedido item){
-        itens.remove(item);
+    public ItemPedido removeItemPedido(){
+        if (itens.size() <= 0){
+            return null;
+        }
+        return itens.remove(itens.size()-1);
     }
 
+    public List<ItemPedido> getItens() {
+        return itens;
+    }
 }
