@@ -16,17 +16,12 @@ public class Posicao implements Serializable {
     private int x;
     private int y;
 
-    @ManyToOne
-    @JoinColumn(name="cliente_id")
-     Cliente cliente; //um endereço tem um cliente, um cliente pode ter varios endereços
-
     public Posicao() {}
 
-    public Posicao(Integer id, int x, int y, Cliente cliente) {
+    public Posicao(Integer id, int x, int y) {
         this.id = id;
         this.x = x;
         this.y = y;
-        this.cliente=cliente;
     }
 
     public void setX(int x) {
@@ -43,10 +38,6 @@ public class Posicao implements Serializable {
 
     public int getY() {
         return y;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
     }
 
     @Override

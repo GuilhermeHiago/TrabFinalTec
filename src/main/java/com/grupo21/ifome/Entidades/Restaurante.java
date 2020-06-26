@@ -1,11 +1,8 @@
 package com.grupo21.ifome.Entidades;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.util.List;
+import javax.persistence.*;
 
+@Entity
 public class Restaurante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +14,6 @@ public class Restaurante {
     private String cnpj;
 
     private Posicao pos;
-    private List<Produto> produtos;
 
     public Restaurante(Integer id, String nome, String cnpj, Posicao pos){
         this.id = id;

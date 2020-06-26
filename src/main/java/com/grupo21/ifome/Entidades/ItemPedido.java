@@ -14,12 +14,14 @@ public class ItemPedido {
 
     private int quantidade;
     private double valorUnitario;
+    private String nomeProduto;
 
     public ItemPedido(){};
 
     public ItemPedido(Pedido pedido, Produto produto, int quantidade, double valorUnitario){
         id.setPedido(pedido);
         id.setProduto(produto);
+        this.nomeProduto = id.getProduto().getNome();
         this.quantidade = quantidade;
         this.valorUnitario = valorUnitario;
     }
@@ -32,6 +34,8 @@ public class ItemPedido {
     public Produto getProduto() {
         return id.getProduto();
     }
+
+    public String getNomeProduto() { return this.nomeProduto = id.getProduto().getNome(); }
 
     public int getQuantidade() {
         return quantidade;

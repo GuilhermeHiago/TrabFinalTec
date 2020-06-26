@@ -57,14 +57,14 @@ public class IfomeApplication implements CommandLineRunner {
 		categoriaRepositorio.saveAll(Arrays.asList(cat1, cat2));
 		produtoRepositorio.saveAll(Arrays.asList(p1,p2,p3));
 
+		Posicao pos1 = new Posicao(null,56,78);
+
 		//instanciando cliente
-		Cliente c1 = new Cliente(null, "Alanzoka", "alanzoka@gmail.com", "888888888888");
+		Cliente c1 = new Cliente(null, "Alanzoka", "alanzoka@gmail.com", "888888888888", pos1);
 
-		Posicao pos1 = new Posicao(null,56,78, c1);
-
-		c1.getPosicao().addAll(Arrays.asList(pos1));
-		clienteRepositorio.saveAll(Arrays.asList(c1));
 		posicaoRepositorio.saveAll(Arrays.asList(pos1));
+		clienteRepositorio.saveAll(Arrays.asList(c1));
+
 
 
 		//fazendo o pedido

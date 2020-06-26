@@ -12,7 +12,6 @@ public class Cliente implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -23,8 +22,7 @@ public class Cliente implements Serializable {
     private String email;
     private String cpf;
 
-    @JsonBackReference
-    private List<Posicao> posicao = new ArrayList<>();
+    private Posicao posicao;
 
     @JsonBackReference
     @OneToMany(mappedBy = "cliente")
@@ -32,11 +30,12 @@ public class Cliente implements Serializable {
 
     public Cliente(){}
 
-    public Cliente(Integer id, String nome, String email, String cpf) {
+    public Cliente(Integer id, String nome, String email, String cpf, Posicao posicao) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
+        this.posicao = posicao;
     }
 
     public String getNome() {
@@ -63,21 +62,20 @@ public class Cliente implements Serializable {
         this.cpf = cpf;
     }
 
-    @OneToMany(mappedBy="cliente")
-    public List<Posicao> getPosicao() {
-        return posicao;
-    }
-
-    public void setPosicao(List<Posicao> posicao) {
-        this.posicao = posicao;
-    }
-
     public List<Pedido> getPedidos() {
         return pedidos;
     }
 
     public void setPedidos(List<Pedido> pedidos) {
         this.pedidos = pedidos;
+    }
+
+    public Posicao getPosicao() {
+        return posicao;
+    }
+
+    public void setPosicao(Posicao posicao) {
+        this.posicao = posicao;
     }
 
     @Override
