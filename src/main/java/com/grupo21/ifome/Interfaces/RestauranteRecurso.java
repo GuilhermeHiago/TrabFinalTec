@@ -20,12 +20,12 @@ public class RestauranteRecurso {
 
     @RequestMapping(value="/", method = RequestMethod.GET)
     public List find() {
-    return restauranteServico.mostraTodos();
+        return restauranteServico.getAll();
     }
 
     @RequestMapping(value="/{id}", method = RequestMethod.GET)
-    public ResponseEntity<?> find(@PathVariable Integer id) {
-        Restaurante res = restauranteServico.buscarPorId(id);
+    public ResponseEntity<?> get(@PathVariable Integer id) {
+        Restaurante res = restauranteServico.get(id);
         return ResponseEntity.ok().body(res);
     }
 }
