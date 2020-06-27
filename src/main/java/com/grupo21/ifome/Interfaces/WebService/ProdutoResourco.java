@@ -1,6 +1,5 @@
 package com.grupo21.ifome.Interfaces.WebService;
 
-
 import com.grupo21.ifome.CasosDeUso.Servicos.ProdutoServico;
 import com.grupo21.ifome.DTO.ProdutoDTO;
 import com.grupo21.ifome.Entidades.Produto;
@@ -8,6 +7,7 @@ import com.grupo21.ifome.Interfaces.Util.URL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping(value="/produtos")
 public class ProdutoResourco {
 
