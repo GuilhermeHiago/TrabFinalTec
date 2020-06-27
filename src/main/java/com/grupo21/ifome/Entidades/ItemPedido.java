@@ -4,49 +4,56 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import java.io.Serializable;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 @Entity
-public class ItemPedido {
+public class ItemPedido implements Serializable{
+    private static final long serialVersionUID = 1L;
 
     @JsonIgnore
     @EmbeddedId
     private ItemPedidoPK id = new ItemPedidoPK();
-
-    private int quantidade;
-    private double valorUnitario;
-    private String nomeProduto;
+    private Integer quantidade;
+    private Double preco;
 
     public ItemPedido(){};
 
-    public ItemPedido(Pedido pedido, Produto produto, int quantidade, double valorUnitario){
+    public ItemPedido(Pedido pedido, Produto produto, Integer quantidade, Double preco){
         id.setPedido(pedido);
         id.setProduto(produto);
-        this.nomeProduto = id.getProduto().getNome();
         this.quantidade = quantidade;
-        this.valorUnitario = valorUnitario;
+        this.preco = preco;
     }
+
+    //politica de desconto pode ser aplicada diretamente no subtotal, colocando toda a logica para um desconto, aqui.
+    public double getSubTotal() { return preco * quantidade; }
 
     @JsonIgnore
-    public Pedido getPedido() {
-        return id.getPedido();
+    public Pedido getPedido() { return id.getPedido(); }
+
+    public Produto getProduto() { return id.getProduto(); }
+
+    public void setPedido(Pedido pedido) { id.setPedido(pedido); }
+
+    public void setProduto(Produto produto) { id.setProduto(produto); }
+
+    public Integer getQuantidade() { return quantidade; }
+
+    public void setQuantidade(Integer quantidade) { this.quantidade = quantidade; }
+
+    public Double getPreco() { return preco; }
+
+    public void setPreco(Double preco) { this.preco = preco; }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
-
-    public Produto getProduto() {
-        return id.getProduto();
-    }
-
-    public String getNomeProduto() { return this.nomeProduto = id.getProduto().getNome(); }
-
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public double getValorUnitario() {
-        return valorUnitario;
-    }
-
-    public void aumentaQtd(){
-        quantidade += 1;
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 
 }

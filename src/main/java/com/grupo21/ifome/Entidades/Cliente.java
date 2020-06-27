@@ -9,7 +9,6 @@ import java.util.List;
 
 @Entity
 public class Cliente implements Serializable {
-
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -21,7 +20,6 @@ public class Cliente implements Serializable {
     @Column(unique=true)
     private String email;
     private String cpf;
-
     private Posicao posicao;
 
     @JsonBackReference
@@ -36,6 +34,14 @@ public class Cliente implements Serializable {
         this.email = email;
         this.cpf = cpf;
         this.posicao = posicao;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNome() {

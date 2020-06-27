@@ -4,7 +4,6 @@ import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.io.Serializable;
-import java.util.Objects;
 
 @Embeddable
 public class ItemPedidoPK implements Serializable {
@@ -35,16 +34,12 @@ public class ItemPedidoPK implements Serializable {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ItemPedidoPK that = (ItemPedidoPK) o;
-        return Objects.equals(pedido, that.pedido) &&
-                Objects.equals(produto, that.produto);
+    public int hashCode() {
+        return super.hashCode();
+    }
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(pedido, produto);
-    }
 }

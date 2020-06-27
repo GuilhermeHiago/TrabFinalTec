@@ -1,7 +1,5 @@
 package com.grupo21.ifome.Entidades;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -15,6 +13,8 @@ public class Posicao implements Serializable {
 
     private int x;
     private int y;
+
+    private Cliente cliente;
 
     public Posicao() {}
 
