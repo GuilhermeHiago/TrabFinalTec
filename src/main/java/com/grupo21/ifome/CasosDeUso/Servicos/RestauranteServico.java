@@ -14,12 +14,12 @@ public class RestauranteServico {
     @Autowired
     private RestauranteRepositorio restauranteRepositorio;
 
-    public List mostraTodos(){
+    public List getAll(){
         List<Restaurante> buscaRestaurante = restauranteRepositorio.findAll();
         return buscaRestaurante;
     }
 
-    public Restaurante buscarPorId(Integer id){
+    public Restaurante get(Integer id){
         Optional<Restaurante> buscaRestaurante = restauranteRepositorio.findById(id);
         return buscaRestaurante.orElseThrow(() -> new ObjectNotFoundExpection("Objeto nao encontradp! Id: "+id+", Tipo: "+ Restaurante.class.getName()));
     }

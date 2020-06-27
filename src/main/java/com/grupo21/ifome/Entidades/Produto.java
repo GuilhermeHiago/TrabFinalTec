@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -11,16 +12,20 @@ import java.util.Set;
 
 
 @Entity
-public class Produto {
+public class Produto implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String nome;
+    @Column(length = 800)
     private String descricao;
-    private String img;
-    private int peso;
+    private String imgCard;
+    private String imgCart;
+    private String imgDetails;
+    private String peso;
     private double preco;
 
     @JsonBackReference
@@ -35,11 +40,13 @@ public class Produto {
     public Produto() {
     }
 
-    public Produto(Integer id, String nome, String descricao, String img, int peso, double preco) {
+    public Produto(Integer id, String nome, String descricao, String imgCard, String imgCart, String imgDetails, String peso, double preco) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
-        this.img = img;
+        this.imgCard = imgCard;
+        this.imgCart = imgCart;
+        this.imgDetails = imgDetails;
         this.peso = peso;
         this.preco = preco;
     }
@@ -66,11 +73,23 @@ public class Produto {
         return descricao;
     }
 
-    public String getImg() {
-        return img;
-    }
+    public void setDescricao(String descricao) { this.descricao = descricao; }
 
-    public int getPeso() {
+    public String getImgCard() { return imgCard; }
+
+    public void setImgCard(String imgCard) { this.imgCard = imgCard; }
+
+    public String getImgCart() { return imgCart; }
+
+    public void setImgCart(String imgCart) { this.imgCart = imgCart; }
+
+    public String getImgDetails() { return imgDetails; }
+
+    public void setImgDetails(String imgDetails) { this.imgDetails = imgDetails; }
+
+    public void setPeso(String peso) { this.peso = peso; }
+
+    public String getPeso() {
         return peso;
     }
 
@@ -96,6 +115,15 @@ public class Produto {
 
     public void setItens(Set<ItemPedido> itens) {
         this.itens = itens;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 
 }
