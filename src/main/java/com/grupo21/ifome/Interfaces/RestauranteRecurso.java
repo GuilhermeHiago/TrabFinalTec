@@ -19,13 +19,13 @@ public class RestauranteRecurso {
     RestauranteServico restauranteServico;
 
     @RequestMapping(value="/", method = RequestMethod.GET)
-    public List find() {
+    public List<Restaurante> find() {
         return restauranteServico.getAll();
     }
 
     @RequestMapping(value="/{id}", method = RequestMethod.GET)
-    public ResponseEntity<?> get(@PathVariable Integer id) {
-        Restaurante res = restauranteServico.get(id);
+    public ResponseEntity<?> get(@PathVariable final Integer id) {
+        final Restaurante res = restauranteServico.get(id);
         return ResponseEntity.ok().body(res);
     }
 }

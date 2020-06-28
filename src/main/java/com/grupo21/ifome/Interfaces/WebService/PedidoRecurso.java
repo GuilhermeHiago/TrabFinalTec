@@ -1,7 +1,6 @@
 package com.grupo21.ifome.Interfaces.WebService;
 
 import com.grupo21.ifome.CasosDeUso.Servicos.PedidoServico;
-import com.grupo21.ifome.Entidades.Cliente;
 import com.grupo21.ifome.Entidades.Pedido;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -14,7 +14,7 @@ public class RestauranteServico {
     @Autowired
     private RestauranteRepositorio restauranteRepositorio;
 
-    public List getAll(){
+    public List<Restaurante> getAll(){
         List<Restaurante> buscaRestaurante = restauranteRepositorio.findAll();
         return buscaRestaurante;
     }
