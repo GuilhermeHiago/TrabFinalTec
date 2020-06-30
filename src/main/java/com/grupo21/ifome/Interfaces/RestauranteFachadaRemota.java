@@ -9,6 +9,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -40,6 +41,12 @@ public class RestauranteFachadaRemota {
         return categoriaServico.buscaTodasCategorias();
     }
 
+    @GetMapping("/categorias/{id}")
+    public Categoria buscaCategoriaPorID(@PathVariable Integer id) {
+        Categoria categoria = categoriaServico.buscaCategoriaPorID(id);
+        return categoria;
+    }
+
     @GetMapping("/restaurantes")
     public List<Restaurante> listaRestaurantes() { return restauranteServico.buscaTodosRestaurantes(); }
 
@@ -56,12 +63,16 @@ public class RestauranteFachadaRemota {
         return ResponseEntity.created(uri).build();
     }
 
-    @GetMapping("/cadastro-cliente")
-    public ResponseEntity<Void> cadastraNovoCliente(@RequestBody Cliente novacliente) {
-        novacliente = clienteServico.cadastraNovoCliente(novacliente);
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path("/{id}").buildAndExpand(novacliente.getId()).toUri();
-        return ResponseEntity.created(uri).build();
+    @GetMapping("/cliente/{id}")
+    public Cliente buscaCliente(@PathVariable Integer id){
+        Cliente cliente = clienteServico.buscaCliente(id);
+        return cliente;
+    }
+
+    @GetMapping("/cliente/{email}")
+    public Cliente buscaClientePorEmail(@PathVariable String email) {
+        Cliente cliente = clienteServico.buscaClientePorEmail(email);
+        return cliente;
     }
 
     @GetMapping("/posicao/{id}")

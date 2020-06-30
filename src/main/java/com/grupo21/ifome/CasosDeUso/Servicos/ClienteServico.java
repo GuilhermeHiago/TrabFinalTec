@@ -15,7 +15,7 @@ public class ClienteServico {
 
     @Autowired
     private ClienteRepositorio clienteRepositorio;
-    
+
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
@@ -28,10 +28,14 @@ public class ClienteServico {
         return buscaCliente.orElseThrow(() -> new ObjectNotFoundException("Objeto nao encontrado! Id: "+id+", Tipo: "+ Cliente.class.getName()));
     }
 
-    public Cliente cadastraNovoCliente(Cliente novoCliente) {
-        bCryptPasswordEncoder.encode(novoCliente.getSenha());
-        novoCliente.setId(null);
-        return clienteRepositorio.save(novoCliente);
+    public Cliente buscaClientePorEmail(String email) {
+        Cliente cliente = clienteRepositorio.findByEmail(email);
+        if (cliente == null) {
+            throw new ObjectNotFoundException(
+                    "Objeto não encontrado! Tipo: " + Cliente.class.getName());
+        }
+        return cliente;
     }
+
 
 }
