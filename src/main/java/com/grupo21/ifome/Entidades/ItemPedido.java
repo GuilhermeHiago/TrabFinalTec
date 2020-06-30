@@ -5,8 +5,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import java.io.Serializable;
-import java.text.NumberFormat;
-import java.util.Locale;
 
 @Entity
 public class ItemPedido implements Serializable{

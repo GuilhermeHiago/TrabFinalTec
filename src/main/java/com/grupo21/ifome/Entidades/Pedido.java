@@ -4,9 +4,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.text.NumberFormat;
 import java.util.HashSet;
-import java.util.Locale;
 import java.util.Set;
 
 @Entity
@@ -17,7 +15,7 @@ public class Pedido implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private int pagamento; //1, 2 ou 3
+    private int pagamento;
 
     @JsonManagedReference
     @ManyToOne
@@ -43,7 +41,6 @@ public class Pedido implements Serializable {
         this.posicaoEntrega = posicaoEntrega;
         this.restaurante = restaurante;
     }
-    //politica de custo entrega pode ser aplicada aqui
 
     public double getValorTotal() {
         double soma = 0.0;
@@ -57,13 +54,9 @@ public class Pedido implements Serializable {
 
     public void setId(Integer id) { this.id = id; }
 
-    public int getPagamento() {
-        return pagamento;
-    }
+    public int getPagamento() { return pagamento; }
 
-    public void setPagamento(int pagamento) {
-        this.pagamento = pagamento;
-    }
+    public void setPagamento(int pagamento) { this.pagamento = pagamento; }
 
     public Cliente getCliente() {
         return cliente;
@@ -104,7 +97,6 @@ public class Pedido implements Serializable {
 
     @Override
     public String toString() {
-        NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
         StringBuilder builder = new StringBuilder();
         builder.append("Pedido número: ");
         builder.append(getId());
@@ -116,7 +108,7 @@ public class Pedido implements Serializable {
             builder.append(ip.toString());
         }
         builder.append("Valor total: ");
-        builder.append(nf.format(getValorTotal()));
+        builder.append((getValorTotal()));
         return builder.toString();
     }
 }

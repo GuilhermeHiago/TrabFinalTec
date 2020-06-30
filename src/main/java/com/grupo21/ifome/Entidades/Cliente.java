@@ -1,6 +1,7 @@
 package com.grupo21.ifome.Entidades;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -17,23 +18,27 @@ public class Cliente implements Serializable {
 
     private String nome;
 
-    @Column(unique=true)
     private String email;
+
     private String cpf;
     private Posicao posicao;
+
+    @JsonIgnore
+    private String senha;
 
     @JsonBackReference
     @OneToMany(mappedBy = "cliente")
     private List<Pedido> pedidos = new ArrayList<>();
 
-    public Cliente(){}
+    public Cliente(){ }
 
-    public Cliente(Integer id, String nome, String email, String cpf, Posicao posicao) {
+    public Cliente(Integer id, String nome, String email, String cpf, Posicao posicao, String senha) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
         this.posicao = posicao;
+        this.senha = senha;
     }
 
     public Integer getId() {
@@ -83,6 +88,10 @@ public class Cliente implements Serializable {
     public void setPosicao(Posicao posicao) {
         this.posicao = posicao;
     }
+
+    public String getSenha() { return senha; }
+
+    public void setSenha(String senha) { this.senha = senha; }
 
     @Override
     public int hashCode() {

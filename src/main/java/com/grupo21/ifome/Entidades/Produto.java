@@ -13,13 +13,13 @@ import java.util.Set;
 
 @Entity
 public class Produto implements Serializable {
-    private static final long serialVersionUID = 1L;
+    public static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String nome;
+    public String nome;
     @Column(length = 800)
     private String descricao;
     private String imgCard;
@@ -31,11 +31,11 @@ public class Produto implements Serializable {
     @JsonBackReference
     @ManyToMany
     @JoinTable(name="PRODUTO_CATEGORIA", joinColumns = @JoinColumn(name = "produto_id"), inverseJoinColumns = @JoinColumn(name = "categoria_id"))
-    private List<Categoria> categorias = new ArrayList<>();
+    public List<Categoria> categorias = new ArrayList<>();
 
     @JsonIgnore
     @OneToMany(mappedBy = "id.produto")
-    private Set<ItemPedido> itens = new HashSet<>();
+    public Set<ItemPedido> itens = new HashSet<>();
 
     public Produto() {
     }

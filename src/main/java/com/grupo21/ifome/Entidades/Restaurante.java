@@ -17,7 +17,6 @@ public class Restaurante implements Serializable {
 
     private String nome;
 
-    @Column(unique=true)
     private String cnpj;
 
     private Posicao pos;
