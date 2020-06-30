@@ -1,41 +1,32 @@
 import React from 'react';
-import { Container } from './styles';
-import pizza from "../../assets/menu/pizza.png";
-import lanches from "../../assets/menu/lanches.png";
-import vegetariana from "../../assets/menu/vegetariana.png";
-import massas from "../../assets/menu/massas.png";
-import doces from "../../assets/menu/doces.png";
-import bebidas from "../../assets/menu/bebidas.png";
+import { Link } from 'react-router-dom';
 
-const Categories = () => (
-    <Container>
-        <ul>
-            <li>
-                <img src={`${pizza}`} alt="Pizza" title="Pizza"/>
-                <p>Pizza</p>
-            </li>
-            <li>
-                <img src={`${lanches}`} alt="Lanches" title="Lanches" />
-                <p>Lanches</p>
-            </li>
-            <li>
-                <img src={`${vegetariana}`} alt="Vegetariana" title="Vegetariana" />
-                <p>Vegetariana</p>
-            </li>
-            <li>
-                <img src={`${massas}`} alt="Massas" title="Massas" />
-                <p>Massas</p>
-            </li>
-            <li>
-                <img src={`${doces}`} alt="Doces e bolos" title="Doces e bolos" />
-                <p>Doces e bolos</p>
-            </li>
-            <li>
-                <img src={`${bebidas}`} alt="Bebidas" title="Bebidas" />
-                <p>Bebidas</p>
-            </li>
-        </ul>
-    </Container>
-);
+import { Container, Card } from './styles';
 
-export default Categories;
+export const Categories = ({ categories, nomeCategoria, idCategoria }) => {
+
+    return (
+        <Container>
+            <div className="header">
+                <h3>{nomeCategoria}</h3>
+                <Link to={`categoria/${idCategoria}`}>
+                    <p className="red">ver todos</p>
+                </Link>
+            </div>
+            <Card>
+                {categories.map((food, index) => (
+                    <div key={`${index}`}>
+                        <img src={food.imgCard} alt={food.nome} height={106} width={190} />
+                        <p className="product-style">{food.nome}</p>
+                        <section>
+                            <p className="quantity-style">{food.peso}</p>
+                            <p className="value-style">R$ {(food.preco).toFixed(2)}</p>
+                        </section>
+                        <button>Adicionar</button>
+                    </div>
+                ))}
+            </Card>
+        </Container>
+    )
+};
+
