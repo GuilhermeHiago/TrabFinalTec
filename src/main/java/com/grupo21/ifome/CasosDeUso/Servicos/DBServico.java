@@ -105,7 +105,7 @@ public class DBServico {
                 "Um clássico da culinária mundial que tem apenas o que um hamburguer precisa: pão fofinho, um queijo cheddar(que não pode faltar né?), sal e três camadas de carne de qualidade. Nosso hamburguer é feito com fraldinha de primeira temperada com sal rosa. Esse corte da carne fica ótimo no hambúrguer, porque tem uma certa quantidade de gordura, ideal para deixar bem macio e saboroso. É rico em proteína, zero carboidratos.",
                 "https://i.imgur.com/1oxBAzz.png",
                 "https://i.imgur.com/HF8GByH.png",
-                "https://i.imgur.com/IoDQTkN.png",
+                "https://i.imgur.com/ODnMHOW.png",
                 "280g",
                 23.90
         );
@@ -200,16 +200,6 @@ public class DBServico {
                 12.90
         );
 
-        Produto p15 = new Produto(
-                null, "Suco Verde Green People",
-                "O suco verde é para aquela pessoa que procura uma bebida natural ao seu alcance. Refresca, traz o docinho da maçã, as fibras da couve e algumas notas de cenoura.Ele é a combinação perfeita para um café da manhã equilibrado. Nada melhor do que começar o dia com um desses.",
-                "https://i.imgur.com/K2cfxLP.png",
-                "https://i.imgur.com/fSUTWSp.png",
-                "https://i.imgur.com/80wuIMl.png",
-                "250ml",
-                8.00
-        );
-
         Produto p16 = new Produto(
                 null, "Suco de laranja",
                 "O suco verde é para aquela pessoa que procura uma bebida natural ao seu alcance. Refresca, traz o docinho da maçã, as fibras da couve e algumas notas de cenoura.Ele é a combinação perfeita para um café da manhã equilibrado. Nada melhor do que começar o dia com um desses.",
@@ -221,8 +211,8 @@ public class DBServico {
         );
 
         Produto p17 = new Produto(
-                null, "Suco de frutas vermelhas",
-                "O suco verde é para aquela pessoa que procura uma bebida natural ao seu alcance. Refresca, traz o docinho da maçã, as fibras da couve e algumas notas de cenoura.Ele é a combinação perfeita para um café da manhã equilibrado. Nada melhor do que começar o dia com um desses.",
+                null, "Suco de morango",
+                "O suco de morango é para aquela pessoa que ama berrys. Refresca, traz o docinho da maçã, as vitaminas do morango e algumas notas de laranja. Ele é a combinação perfeita para um café da manhã equilibrado. Nada melhor do que começar o dia com um desses.",
                 "https://i.imgur.com/RXInUx2.png",
                 "https://i.imgur.com/c3cwjIp.png",
                 "https://i.imgur.com/gLJ8Vz8.png",
@@ -253,7 +243,7 @@ public class DBServico {
         Produto p20 = new Produto(
                 null, "Pizza de peperonni",
                 "Muçarela e fatias de pepperoni (salame especial condimentado com páprica).",
-                "https://i.imgur.com/sOH2ALA.png",
+                "https://i.imgur.com/5IjzywG.png",
                 "https://i.imgur.com/5IjzywG.png",
                 "https://i.imgur.com/GvUYBMr.png",
                 "65cm",
@@ -261,7 +251,7 @@ public class DBServico {
         );
 
         Produto p21 = new Produto(
-                null, "Pizza de cogumelos e milho",
+                null, "Pizza de milho",
                 "Muçarela, tomate, champignon, pimentão, cebola e milho.",
                 "https://i.imgur.com/cZJX9eT.png",
                 "https://i.imgur.com/uwZ8f2H.png",
@@ -285,7 +275,7 @@ public class DBServico {
         categoria3.getProdutos().addAll(Arrays.asList(p1, p2, p3, p4, p7));
         categoria4.getProdutos().addAll(Arrays.asList(p19, p20, p21, p22));
         categoria5.getProdutos().addAll(Arrays.asList(p10, p11, p12, p13, p14));
-        categoria6.getProdutos().addAll(Arrays.asList(p15, p16, p17, p18));
+        categoria6.getProdutos().addAll(Arrays.asList(p13, p16, p17, p18));
 
         p1.getCategorias().addAll(Arrays.asList(categoria1, categoria3));
         p2.getCategorias().addAll(Arrays.asList(categoria1, categoria3));
@@ -300,8 +290,7 @@ public class DBServico {
         p11.getCategorias().addAll(Arrays.asList(categoria5));
         p12.getCategorias().addAll(Arrays.asList(categoria5, categoria6));
         p13.getCategorias().addAll(Arrays.asList(categoria5, categoria6));
-        p14.getCategorias().addAll(Arrays.asList(categoria6));
-        p15.getCategorias().addAll(Arrays.asList(categoria6));
+        p14.getCategorias().addAll(Arrays.asList(categoria5));
         p16.getCategorias().addAll(Arrays.asList(categoria6));
         p17.getCategorias().addAll(Arrays.asList(categoria6));
         p19.getCategorias().addAll(Arrays.asList(categoria4));
@@ -310,7 +299,7 @@ public class DBServico {
         p22.getCategorias().addAll(Arrays.asList(categoria4));
 
         categoriaRepositorio.saveAll(Arrays.asList(categoria1, categoria2, categoria3, categoria4, categoria5, categoria6));
-        produtoRepositorio.saveAll(Arrays.asList(p1,p2,p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22));
+        produtoRepositorio.saveAll(Arrays.asList(p1,p2,p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p16, p17, p18, p19, p20, p21, p22));
 
 
         //instanciando posicao geografica Clientes
