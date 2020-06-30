@@ -1,20 +1,17 @@
 import styled from "styled-components";
 
 export const Container = styled.footer`
-    bottom: 0;
+    /* bottom: 0; */
     margin: 0;
     width: 100%;
-    display: flex;
-    position: relative;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #DDD;
     margin-top: 50px;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color: #F9F9F9;
 
     .links {
         width: 100%;
-        margin: auto;
         color: white;
         font-size: 16px;
         font-weight: bold;
@@ -38,16 +35,16 @@ export const Container = styled.footer`
         display: flex;
         flex-direction: row;
         align-items: center;
-        margin-bottom: 50px;
+        padding-bottom: 50px;
     }
 
     .social-medias {
         color: #333;
         font-size: 16px;
-        font-weight: bold;
-        background-color: #DDD;
         margin-top: 50px;
+        font-weight: bold;
         margin-right: 150px;
+        background-color: #F9F9F9;
 
         p {
             text-align: center;

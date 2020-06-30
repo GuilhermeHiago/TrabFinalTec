@@ -14,10 +14,10 @@ export const Footer = () => (
         <div className="infos">
             <div className="social-medias">
                 <p>Redes sociais</p>
-                <FaFacebook color="#AF1414" size={40} style={{ border: "1px solid #AF1414", padding: 5, margin: 8 }} />
-                <FaInstagram color="#AF1414" size={40} style={{ border: "1px solid #AF1414", padding: 5, margin: 8 }} />
-                <FaWhatsapp color="#AF1414" size={40} style={{ border: "1px solid #AF1414", padding: 5, margin: 8 }} />
-                <FaTwitter color="#AF1414" size={40} style={{ border: "1px solid #AF1414", padding: 5, margin: 8 }} />
+                <FaFacebook title="Facebook" color="#AF1414" size={40} style={{ border: "1px solid #AF1414", padding: 5, margin: 8, cursor: 'pointer' }} />
+                <FaInstagram title="Instagram" color="#AF1414" size={40} style={{ border: "1px solid #AF1414", padding: 5, margin: 8, cursor: 'pointer' }} />
+                <FaWhatsapp title="Whatsapp" color="#AF1414" size={40} style={{ border: "1px solid #AF1414", padding: 5, margin: 8, cursor: 'pointer' }} />
+                <FaTwitter title="Twitter" color="#AF1414" size={40} style={{ border: "1px solid #AF1414", padding: 5, margin: 8, cursor: 'pointer' }} />
             </div>
 
             <div className="privacy-policies">
