@@ -19,14 +19,9 @@ public class CategoriaServico {
         return categoriaRepositorio.findAll();
     }
 
-    public Categoria get(Integer id) {
+    public Categoria buscaCategoriaPorID(Integer id) {
         Optional<Categoria> buscaCategria = categoriaRepositorio.findById(id);
         return buscaCategria.orElseThrow(() -> new ObjectNotFoundException("Objeto nao encontrado! Id: "+id+", Tipo: "+ Categoria.class.getName()));
-    }
-
-    public Categoria insere(Categoria novaCategoria) {
-        novaCategoria.setId(null);
-        return categoriaRepositorio.save(novaCategoria);
     }
 
 }
