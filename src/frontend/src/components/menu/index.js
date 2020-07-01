@@ -22,37 +22,37 @@ export const Menu = () => {
         <Container>
             <ul className="large">
                 <li>
-                    <Link to={`category/sopas`} style={{ textDecoration: 'none', color: '#333' }}>
+                    <Link to={`categorias/1`} style={{ textDecoration: 'none', color: '#333' }}>
                         <img src="https://i.imgur.com/l7PfOzS.png" alt="Especiais de Inverno" title="Especiais de Inverno" />
                         <p>Especiais de Inverno</p>
                     </Link>
                 </li>
                 <li>
-                    <Link to={`category/lanches`} style={{ textDecoration: 'none', color: '#333' }}>
+                    <Link to={`categorias/2`} style={{ textDecoration: 'none', color: '#333' }}>
                         <img src="https://i.imgur.com/z61SfxX.png" alt="Lanches" title="Lanches" />
                         <p>Lanches</p>
                     </Link>
                 </li>
                 <li>
-                    <Link to={`category/vegetariana`} style={{ textDecoration: 'none', color: '#333' }}>
+                    <Link to={`categorias/3`} style={{ textDecoration: 'none', color: '#333' }}>
                         <img src="https://i.imgur.com/jvXKKc8.png" alt="Vegetariana" title="Vegetariana" />
                         <p>Vegetariana</p>
                     </Link>
                 </li>
                 <li>
-                    <Link to={`category/massas`} style={{ textDecoration: 'none', color: '#333' }}>
+                    <Link to={`categorias/4`} style={{ textDecoration: 'none', color: '#333' }}>
                         <img src="https://i.imgur.com/pNFjucK.png" alt="Massas" title="Massas" />
                         <p>Massas</p>
                     </Link>
                 </li>
                 <li>
-                    <Link to={`category/doces`} style={{ textDecoration: 'none', color: '#333' }}>
+                    <Link to={`categorias/5`} style={{ textDecoration: 'none', color: '#333' }}>
                         <img src="https://i.imgur.com/dxTa404.png" alt="Doces e bolos" title="Doces e bolos" />
                         <p>Doces e bolos</p>
                     </Link>
                 </li>
                 <li>
-                    <Link to={`category/bebidas`} style={{ textDecoration: 'none', color: '#333' }}>
+                    <Link to={`categorias/6`} style={{ textDecoration: 'none', color: '#333' }}>
                         <img src="https://i.imgur.com/G08jnOG.png" alt="Bebidas" title="Bebidas" />
                         <p>Bebidas</p>
                     </Link>
@@ -65,37 +65,37 @@ export const Menu = () => {
                         ref={(ele) => { window.Menu = ele; }}
                     >
                         <li>
-                            <Link to={`category/pizzas`} style={{ textDecoration: 'none', color: '#333' }}>
+                            <Link to={`categorias/1`} style={{ textDecoration: 'none', color: '#333' }}>
                                 <img src={`${pizza}`} alt="Pizza" title="Pizza" />
                                 <p>Pizza</p>
                             </Link>
                         </li>
                         <li>
-                            <Link to={`category/lanches`} style={{ textDecoration: 'none', color: '#333' }}>
+                            <Link to={`categorias/2`} style={{ textDecoration: 'none', color: '#333' }}>
                                 <img src={`${lanches}`} alt="Lanches" title="Lanches" />
                                 <p>Lanches</p>
                             </Link>
                         </li>
                         <li>
-                            <Link to={`category/vegetariana`} style={{ textDecoration: 'none', color: '#333' }}>
+                            <Link to={`categorias/3`} style={{ textDecoration: 'none', color: '#333' }}>
                                 <img src={`${vegetariana}`} alt="Vegetariana" title="Vegetariana" />
                                 <p>Vegetariana</p>
                             </Link>
                         </li>
                         <li>
-                            <Link to={`category/massas`} style={{ textDecoration: 'none', color: '#333' }}>
+                            <Link to={`categorias/4`} style={{ textDecoration: 'none', color: '#333' }}>
                                 <img src={`${massas}`} alt="Massas" title="Massas" />
                                 <p>Massas</p>
                             </Link>
                         </li>
                         <li>
-                            <Link to={`category/doces`} style={{ textDecoration: 'none', color: '#333' }}>
+                            <Link to={`categorias/5`} style={{ textDecoration: 'none', color: '#333' }}>
                                 <img src={`${doces}`} alt="Doces e bolos" title="Doces e bolos" />
                                 <p>Doces e bolos</p>
                             </Link>
                         </li>
                         <li>
-                            <Link to={`category/bebidas`} style={{ textDecoration: 'none', color: '#333' }}>
+                            <Link to={`categorias/6`} style={{ textDecoration: 'none', color: '#333' }}>
                                 <img src={`${bebidas}`} alt="Bebidas" title="Bebidas" />
                                 <p>Bebidas</p>
                             </Link>

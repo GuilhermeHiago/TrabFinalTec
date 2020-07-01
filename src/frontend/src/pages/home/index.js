@@ -17,7 +17,6 @@ const Home = () => {
 
   const showCategories1 = async (number) => {
     const token = localStorage.getItem('token');
-    console.log('esse é token', token)
     try {
       const response = await api.get('/api/categorias',
         { headers: { Authorization: token } });
@@ -29,7 +28,6 @@ const Home = () => {
 
   const showCategories2 = async (number) => {
     const token = localStorage.getItem('token');
-    console.log('esse é token', token)
     try {
       const response = await api.get('/api/categorias',
         { headers: { Authorization: token } });
@@ -41,7 +39,6 @@ const Home = () => {
 
   const showCategories3 = async (number) => {
     const token = localStorage.getItem('token');
-    console.log('esse é token', token)
     try {
       const response = await api.get('/api/categorias',
         { headers: { Authorization: token } });

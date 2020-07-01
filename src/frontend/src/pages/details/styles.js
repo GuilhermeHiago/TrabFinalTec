@@ -11,6 +11,7 @@ export const Container = styled.section`
     .description-style {
         color: #979595;
         font-size: 22px;
+        max-width: 960px;
 
         .description-height {
          color: #333;
@@ -23,23 +24,13 @@ export const Container = styled.section`
         }
     }
 
-    @media screen and (min-width: 1000px) {
-        .description-style {
-            margin-left: 350px;
-        }
+    .price-style {
+        font-size: 22px;
+        color: #444;
+        margin-bottom: 80px;
     }
 
-    @media screen and (min-width: 960.1px) {
-        .description-style {
-            margin-left: 200px;
-        }
-    }
-
-    @media screen and (max-width: 960px) {
-
-    }
-
-    @media screen and (max-width: 815px) {
+    /* @media screen and (max-width: 815px) {
         margin: 0;
         width: 100%;
         height: 55px;
@@ -66,13 +57,14 @@ export const Container = styled.section`
                 flex-direction: column;
             }
         }
-    }
+    } */
 `;
 
 export const Content = styled.div`
     color: #333;
     display: flex;
     flex-direction: row;
+    max-width: 960px;
     justify-content: center;
 
     .a {
@@ -120,15 +112,7 @@ export const Content = styled.div`
         margin: auto;
     }
 
-    @media screen and (max-width: 1440px) and (min-width: 960.1px) {
-
-    }
-
-    @media screen and (max-width: 960px) {
-
-    }
-
-    @media screen and (max-width: 815px) {
+    /* @media screen and (max-width: 815px) {
         margin: 0;
         width: 100%;
         height: 55px;
@@ -155,7 +139,7 @@ export const Content = styled.div`
                 flex-direction: column;
             }
         }
-    }
+    } */
 
 `;
 

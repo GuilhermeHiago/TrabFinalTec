@@ -14,21 +14,20 @@ export const Category = () => {
 
     const { id } = useParams();
 
-    const showCategory = async (number) => {
+    const showCategory = async () => {
         const token = localStorage.getItem('token');
         try {
             const response = await api.get(`/api/categorias/${id}`,
                 { headers: { Authorization: token } });
             setCategory(response.data.produtos);
-            console.log(response.data.produtos);
         } catch (err) {
-            console.log('Falha ao buscar categoria, tente novamente.', err)
+            console.log('Falha ao buscar produtos categoria, tente novamente.', err)
         }
     }
 
     useEffect(() => {
-        showCategory();
-    }, [])
+        showCategory();    
+    },[])
 
     return (
         <Container>
@@ -39,7 +38,7 @@ export const Category = () => {
                     <div key={`${index}`}>
                         <img src={food.imgDetails} alt={food.nome} width={350} />
                         <p className="product-style">{food.nome}</p>
-                        <Link to={`category/${food.id}`} >
+                        <Link to={`/produtos/detalhes/${food.id}`}>
                             <button>Ver mais</button>
                         </Link>
                     </div>

@@ -20,11 +20,15 @@ export const Content = styled.div`
         }
 
         .description {
-            p {
+            .title {
                 font-size: 22px;
+            }
+
+            p {
+                font-size: 16px;
                 font-weight: 500;
                 padding-left: 40px;
-                padding-bottom: 20px;
+                padding-bottom: 2px;
             }
         }
 
