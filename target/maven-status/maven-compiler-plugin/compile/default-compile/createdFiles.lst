@@ -1,7 +1,6 @@
 com\grupo21\ifome\CasosDeUso\Repositorios\ItemPedidoRepositorio.class
 com\grupo21\ifome\Interfaces\RestauranteFachadaRemota.class
 com\grupo21\ifome\security\JWTAuthenticationFilter.class
-com\grupo21\ifome\CasosDeUso\Politicas\SelecaoRestaurante.class
 com\grupo21\ifome\CasosDeUso\Repositorios\CategoriaRepositorio.class
 com\grupo21\ifome\Entidades\ItemPedidoPK.class
 com\grupo21\ifome\CasosDeUso\Servicos\RestauranteServico.class
