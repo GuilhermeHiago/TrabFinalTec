@@ -91,6 +91,7 @@ async function addItemPedido(nomePedido, quantidade){
         //console.log(resposta);
         if(resposta.ok){
             pedidoAtual = await resposta.json();
+            let alert = await pedidoAtual;
             atualizaListaPedidoVisual();
             getDadosDTO();
             //console.log("pedidoatual: ");
@@ -229,12 +230,9 @@ async function getDadosDTO(){
             document.getElementById("restaurante").textContent = "Restaurante: " + dadosAtuais.restaurante;
             document.getElementById("total").textContent = "Preço: R$ " + dadosAtuais.valorCompra;
             //document.getElementById("desconto").textContent = dadosAtuais.valorCompra;
-            if(pedidoAtual.itemPedido.length >= 0){
-                document.getElementById("entrega").textContent = "Entrega: R$ " + dadosAtuais.entrega;
-                document.getElementById("final").textContent = "Preço Final: R$ " + dadosAtuais.valorCompraFinal;
-            }
-            document.getElementById("entrega").textContent = "Entrega: R$ " + 0.00;
-            document.getElementById("final").textContent = "Preço Final: R$ " + 0.00;
+            
+            document.getElementById("entrega").textContent = "Entrega: R$ " + dadosAtuais.entrega;
+            document.getElementById("final").textContent = "Preço Final: R$ " + dadosAtuais.valorCompraFinal;
         }
         else{
             console.log("resposta !ok");
