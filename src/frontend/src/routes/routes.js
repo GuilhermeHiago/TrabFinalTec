@@ -9,6 +9,7 @@ import { NotFound } from '../pages/notFound';
 import { Categories } from '../pages/categories';
 import { Category } from '../pages/category';
 import { Perfil } from '../pages/perfil';
+import { Finalizar } from '../pages/finalizar';
 import PrivateRoute from './PrivateRoute';
 
 
@@ -24,8 +25,11 @@ const Routes = () => (
             <Route exact path="/produtos/detalhes/:id">
                 <Details />
             </Route>
-            <Route exact path="/sacola">
+            <Route exact path="/sacola" >
                 <Cart />
+            </Route>
+            <Route exact path="/sacola/finalizar" >
+                <Finalizar />
             </Route>
             <Route exact path="/categorias/">
                 <Categories />

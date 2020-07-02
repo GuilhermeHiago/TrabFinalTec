@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.footer`
     /* bottom: 0; */
-    margin: 0;
+    margin: auto;
     width: 100%;
     margin-top: 50px;
     position: absolute;
@@ -36,6 +36,7 @@ export const Container = styled.footer`
         flex-direction: row;
         align-items: center;
         padding-bottom: 50px;
+        justify-content: center;
     }
 
     .social-medias {

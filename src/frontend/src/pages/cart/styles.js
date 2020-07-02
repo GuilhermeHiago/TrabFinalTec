@@ -28,7 +28,7 @@ export const Content = styled.div`
                 font-size: 16px;
                 font-weight: 500;
                 padding-left: 40px;
-                padding-bottom: 2px;
+                padding-bottom: 5px;
             }
         }
 
