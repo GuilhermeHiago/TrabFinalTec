@@ -12,11 +12,6 @@ Ifome é um aplicativo de entrega de comida online, no qual um cliente, previame
 
 - Cupom de descontos podem ser aplicados ao valor final da compra, no carrinho de compras, nao podendo ser aplicado mais de um código por pedido.
 
-### Feito com
-- [Java](https://www.java.com/pt_BR/)
-- [Spring Boot](https://spring.io/)
-- [React JS](https://github.com/facebook/react);
-- [Axios](https://github.com/axios/axios);
 
 ## Rodando a aplicação
 - Faça download da aplicação;
@@ -24,15 +19,3 @@ Ifome é um aplicativo de entrega de comida online, no qual um cliente, previame
 
 #### Backend 
 - Digite ```mvn spring-boot:run```.
-
-#### Frontend
-- Se é a primeira vez rodando o projeto, abra o terminal e digite ```npm install```;
-- Então, digite ```npm start```.
-
-### Diagrama de classes 
-	
-### Mocks
-<img src="https://i.imgur.com/f9mYWrH.png" alt="Home - Desktop" title="Home - Desktop">
-<img src="https://i.imgur.com/CPh02lm.png" alt="Carrinho - Desktop" title="Carrinho - Desktop">
-<img src="https://i.imgur.com/IH7COaR.png" alt="Home - Mobile" title="Home - Mobile">
-<img src="https://i.imgur.com/Bj0WCt8.png" alt="Carrinho - Mobile" title="Carrinho - Mobile">	
