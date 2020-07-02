@@ -1,4 +1,4 @@
-# Trabalho Final de Tecnicas de Programação
+﻿# Trabalho Final de Tecnicas de Programação
 #### Grupo 21: Guilherme Hiago Santos e Suane Vallim
 
 ## Objetivos do sistema
