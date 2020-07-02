@@ -20,6 +20,13 @@ public class RepositorioProdutoImpMem implements RepositorioProdutos {
         produtos.put("Prato1", new Produto("Prato1", 35.50));
         produtos.put("Prato2", new Produto("Prato2", 15.50));
         produtos.put("Prato3", new Produto("Prato3", 55.50));
+        produtos.put("Prato4", new Produto("Prato4", 25.50));
+        produtos.put("Prato5", new Produto("Prato5", 17.50));
+        produtos.put("Prato6", new Produto("Prato6", 40.50));
+        produtos.put("Prato7", new Produto("Prato7", 55.50));
+        produtos.put("Prato8", new Produto("Prato8", 25.50));
+        produtos.put("Prato9", new Produto("Prato9", 17.50));
+        //produtos.put("Prato10", new Produto("Prato10", 40.50));
     }
 
     public Produto recuperaPorNome(final String nome) {

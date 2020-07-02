@@ -57,7 +57,7 @@ async function carregaProdutos(){
                 let labelN = '<label style="width: 20%;background-color: wheat;text-align: center;">Quantidade:</label>';
                 let inQtd = '<input style="width: 20%;background-color: wheat;text-align: center;"/>';
                 let botaoAddProd = '<button class="btAdd" style="width: 10%;""text-align: center;>+</button></br>';
-                listItens += '<div style="background-color: wheat;padding:2%;">' + nomeProd + precoProd + labelN + inQtd + botaoAddProd+ "</div></br>";
+                listItens += '<div style="background-color: wheat;padding:2%;heigth=max-content;">' + nomeProd + precoProd + labelN + inQtd + botaoAddProd+ "</div></br>";
             });
 
             listVisual.innerHTML = listItens;
@@ -138,6 +138,8 @@ async function fechaPedido(){
             pedidoAtual = await resposta.json();
             console.log("pedido apos remoção:")
             console.log(pedidoAtual);
+            let a = criaPedido();
+            let alert = await a;
             atualizaListaPedidoVisual();
             getDadosDTO();
             //console.log("pedidoatual: ");
@@ -200,6 +202,7 @@ async function getDadosDTO(){
             //console.log(pedidoAtual);
             
             let valores = document.getElementById("valores").childNodes;
+            document.getElementById("restaurante").textContent = "Restaurante: " + dadosAtuais.restaurante;
             document.getElementById("total").textContent = "Preço: R$ " + dadosAtuais.valorCompra;
             //document.getElementById("desconto").textContent = dadosAtuais.valorCompra;
             document.getElementById("entrega").textContent = "Entrega: R$ " + dadosAtuais.entrega;
