@@ -29,6 +29,8 @@ async function criaPedido(){
 
         if(resposta.ok){
             pedidoAtual = await resposta.json();
+            let alert = await pedidoAtual;
+            atualizaListaPedidoVisual();
             //console.log(pedidoAtual);
         }
     }catch(erro){
@@ -124,6 +126,26 @@ async function removeItemPedido(nomePedido, quantidade){
     }
 }
 
+function alerta()
+{
+    let res = document.getElementById("restaurante").textContent;
+    let t = document.getElementById("total").textContent = "Preço: R$ " + dadosAtuais.valorCompra;
+    //document.getElementById("desconto").textContent = dadosAtuais.valorCompra;
+    let e = document.getElementById("entrega").textContent = "Entrega: R$ " + dadosAtuais.entrega;
+    let f = document.getElementById("final").textContent = "Preço Final: R$ " + dadosAtuais.valorCompraFinal;
+    var r=confirm("Voce fez uma compra!\n" + res + "\n" + t + "\n" + e + "\n" + f);
+    if (r==true)
+    {
+    x="você pressionou OK!";
+    
+    }
+    else
+    {
+    x="Você pressionou Cancelar!";
+    }
+    //document.getElementById("mainPage").innerHTML=x;
+}
+
 async function fechaPedido(){
     let url = "http://localhost:8080/consultacliente/fechapedido?";
     let cpf = "cpfCliente=" + dadosClient.cpf;
@@ -140,7 +162,8 @@ async function fechaPedido(){
             console.log(pedidoAtual);
             let a = criaPedido();
             let alert = await a;
-            atualizaListaPedidoVisual();
+            alerta();
+            //atualizaListaPedidoVisual();
             getDadosDTO();
             //console.log("pedidoatual: ");
             //console.log(pedidoAtual);
@@ -155,8 +178,9 @@ async function atualizaListaPedidoVisual(){
     let listaPedidos = "";
 
     let tabela = document.getElementById("tabelaPedido");
+    let aux = tabela.rows.length;
 
-    for(i = 1; i < tabela.rows.length; i++){
+    for(i = aux-1; i > 0; i--){
         console.log(tabela.rows);
         tabela.deleteRow(i);
     }
@@ -205,8 +229,12 @@ async function getDadosDTO(){
             document.getElementById("restaurante").textContent = "Restaurante: " + dadosAtuais.restaurante;
             document.getElementById("total").textContent = "Preço: R$ " + dadosAtuais.valorCompra;
             //document.getElementById("desconto").textContent = dadosAtuais.valorCompra;
-            document.getElementById("entrega").textContent = "Entrega: R$ " + dadosAtuais.entrega;
-            document.getElementById("final").textContent = "Preço Final: R$ " + dadosAtuais.valorCompraFinal;
+            if(pedidoAtual.itemPedido.length >= 0){
+                document.getElementById("entrega").textContent = "Entrega: R$ " + dadosAtuais.entrega;
+                document.getElementById("final").textContent = "Preço Final: R$ " + dadosAtuais.valorCompraFinal;
+            }
+            document.getElementById("entrega").textContent = "Entrega: R$ " + 0.00;
+            document.getElementById("final").textContent = "Preço Final: R$ " + 0.00;
         }
         else{
             console.log("resposta !ok");
@@ -235,18 +263,8 @@ login();
 criaPedido();
 atualizaListaPedidoVisual();
 carregaProdutos();
-/*document.getElementById("btDados").onclick = async function () {
-    matricula = document.getElementById("matricula").value;
-    let resposta = await consultaDadosAluno(matricula);
-    let div = document.getElementById("resposta");
-    if (resposta != null){
-        div.innerHTML = JSON.stringify(resposta);
-        jsonTest = document.getElementById("jsonTest");
-        jsonTest.innerHTML = resposta.nome+"<br>"+resposta.sobrenome+"<br>"+resposta.telefone;
-    }else{
-        div.innerHTML = "Erro";
-    }
-}*/
+
+
 document.getElementById("btConclui").onclick = async function () {
     fechaPedido();
 }
