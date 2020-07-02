@@ -2,7 +2,7 @@ package com.grupo21.ifome;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.grupo21.ifome.Entidades.Posicao;
+import com.grupo21.ifome.entidades.Posicao;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,7 +13,7 @@ public class PosicaoTest {
     @BeforeEach
     public void initialize() {
         p1 = new Posicao();
-        p2 = new Posicao(123, 2,3);
+        p2 = new Posicao( 2,3);
     }
 
     @Test

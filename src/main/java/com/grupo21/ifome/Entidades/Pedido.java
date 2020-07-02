@@ -1,114 +1,58 @@
-package com.grupo21.ifome.Entidades;
+package com.grupo21.ifome.entidades;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.persistence.*;
-import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@Entity
-public class Pedido implements Serializable {
-    private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class Pedido {
+    private int id;
+    private List<ItemPedido> itens; 
 
-    private int pagamento;
+    public Pedido(){
+    }
 
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "cliente_id")
-    private Cliente cliente;
-
-    @OneToMany(mappedBy = "id.pedido")
-    private Set<ItemPedido> itens = new HashSet<>();
-
-    private Posicao posicaoEntrega;
-
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "restaurante_id")
-    private Restaurante restaurante;
-
-    public Pedido(){}
-
-    public Pedido(Integer id, int pagamento, Cliente cliente, Posicao posicaoEntrega, Restaurante restaurante) {
+    public Pedido(int id){
+        itens = new ArrayList<>();
         this.id = id;
-        this.pagamento = pagamento;
-        this.cliente = cliente;
-        this.posicaoEntrega = posicaoEntrega;
-        this.restaurante = restaurante;
     }
 
-    public double getValorTotal() {
-        double soma = 0.0;
-        for(ItemPedido ip : itens){
-            soma = soma + ip.getSubTotal();
-        }
-        return soma;
+    public int getId() {
+        return id;
     }
 
-    public Integer getId() { return id; }
-
-    public void setId(Integer id) { this.id = id; }
-
-    public int getPagamento() { return pagamento; }
-
-    public void setPagamento(int pagamento) { this.pagamento = pagamento; }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
-    public Set<ItemPedido> getItens() {
+    public List<ItemPedido> getItemPedido() {
         return itens;
     }
 
-    public void setItens(Set<ItemPedido> itens) {
-        this.itens = itens;
+    public ItemPedido addItemPedido(String nome, double valor, int quantidade){
+        ItemPedido item = new ItemPedido(nome, quantidade, valor);
+        itens.add(item);
+        return item;
     }
 
-    public Posicao getPosicaoEntrega() { return posicaoEntrega; }
-
-    public void setPosicaoEntrega(Posicao posicaoEntrega) { this.posicaoEntrega = posicaoEntrega; }
-
-    public Restaurante getRestaurante() {
-        return restaurante;
-    }
-
-    public void setRestaurante(Restaurante restaurante) {
-        this.restaurante = restaurante;
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("Pedido número: ");
-        builder.append(getId());
-        builder.append(", Cliente: ");
-        builder.append(getCliente().getNome());
-
-        builder.append("\nDetalhes:\n");
-        for (ItemPedido ip : getItens()) {
-            builder.append(ip.toString());
+    public ItemPedido removeItemPedido(){
+        if (itens.size() <= 0){
+            return null;
         }
-        builder.append("Valor total: ");
-        builder.append((getValorTotal()));
-        return builder.toString();
+        return itens.remove(itens.size()-1);
+    }
+
+    @JsonIgnore
+    public List<ItemPedido> getItens() {
+        return itens;
+    }
+
+    public void fechaPedido(){
+        //salva na memoria
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setItens(List<ItemPedido> itens) {
+        this.itens = itens;
     }
 }

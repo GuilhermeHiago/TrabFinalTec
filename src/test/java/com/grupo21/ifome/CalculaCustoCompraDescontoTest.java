@@ -7,8 +7,8 @@ import static org.mockito.Mockito.when;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.grupo21.ifome.CasosDeUso.Politicas.CalculaCustoCompraDesconto;
-import com.grupo21.ifome.Entidades.ItemPedido;
+import com.grupo21.ifome.casosDeUso.Politicas.CalculaCustoCompraDesconto;
+import com.grupo21.ifome.entidades.ItemPedido;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,10 +22,12 @@ public class CalculaCustoCompraDescontoTest {
     public void initialize() {
         calc = new CalculaCustoCompraDesconto();
         p = mock(ItemPedido.class);
-        when(p.getPreco()).thenReturn(50.0);
+        when(p.getValorUnitario()).thenReturn(50.0);
+        when(p.getQuantidade()).thenReturn(1);
 
         pp = mock(ItemPedido.class);
-        when(pp.getPreco()).thenReturn(50.0);
+        when(pp.getValorUnitario()).thenReturn(50.0);
+        when(pp.getQuantidade()).thenReturn(1);
 
         p2 = new ArrayList<>();
         p2.add(p);

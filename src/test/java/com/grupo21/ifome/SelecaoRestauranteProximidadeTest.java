@@ -7,11 +7,11 @@ import static org.mockito.Mockito.when;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.grupo21.ifome.CasosDeUso.Politicas.SelecaoRestauranteProximidade;
-import com.grupo21.ifome.Entidades.Cliente;
-import com.grupo21.ifome.Entidades.Pedido;
-import com.grupo21.ifome.Entidades.Posicao;
-import com.grupo21.ifome.Entidades.Restaurante;
+import com.grupo21.ifome.casosDeUso.Politicas.SelecaoRestauranteProximidade;
+import com.grupo21.ifome.entidades.Cliente;
+import com.grupo21.ifome.entidades.Pedido;
+import com.grupo21.ifome.entidades.Posicao;
+import com.grupo21.ifome.entidades.Restaurante;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -46,7 +46,7 @@ public class SelecaoRestauranteProximidadeTest {
         r1 = mock(Restaurante.class);
         r2 = mock(Restaurante.class);
 
-        when(c.getPosicao()).thenReturn(p1);
+        when(c.getPos()).thenReturn(p1);
 
         when(r1.getPos()).thenReturn(p2);
         when(r2.getPos()).thenReturn(p3);

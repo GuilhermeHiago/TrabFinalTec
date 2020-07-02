@@ -1,57 +1,41 @@
-package com.grupo21.ifome.Entidades;
+package com.grupo21.ifome.entidades;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+public class ItemPedido {
+    private String nome;
+    private int quantidade;
+    private double valorUnitario;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import java.io.Serializable;
+    public ItemPedido(){}
 
-@Entity
-public class ItemPedido implements Serializable{
-    private static final long serialVersionUID = 1L;
-
-    @JsonIgnore
-    @EmbeddedId
-    private ItemPedidoPK id = new ItemPedidoPK();
-    private Integer quantidade;
-    private Double preco;
-
-    public ItemPedido(){};
-
-    public ItemPedido(Pedido pedido, Produto produto, Integer quantidade, Double preco){
-        id.setPedido(pedido);
-        id.setProduto(produto);
+    public ItemPedido(String nome, int quantidade, double valorUnitario){
+        this.nome = nome;
         this.quantidade = quantidade;
-        this.preco = preco;
+        this.valorUnitario = valorUnitario;
     }
 
-    //politica de desconto pode ser aplicada diretamente no subtotal, colocando toda a logica para um desconto, aqui.
-    public double getSubTotal() { return preco * quantidade; }
-
-    @JsonIgnore
-    public Pedido getPedido() { return id.getPedido(); }
-
-    public Produto getProduto() { return id.getProduto(); }
-
-    public void setPedido(Pedido pedido) { id.setPedido(pedido); }
-
-    public void setProduto(Produto produto) { id.setProduto(produto); }
-
-    public Integer getQuantidade() { return quantidade; }
-
-    public void setQuantidade(Integer quantidade) { this.quantidade = quantidade; }
-
-    public Double getPreco() { return preco; }
-
-    public void setPreco(Double preco) { this.preco = preco; }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public String getNome() {
+        return nome;
     }
 
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public double getValorUnitario() {
+        return valorUnitario;
+    }
+
+    public void aumentaQtd(){
+        quantidade += 1;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+    public void setValorUnitario(double valorUnitario) {
+        this.valorUnitario = valorUnitario;
+    }
 }

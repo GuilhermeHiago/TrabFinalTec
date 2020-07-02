@@ -1,25 +1,12 @@
-package com.grupo21.ifome.Entidades;
+package com.grupo21.ifome.entidades;
 
-import javax.persistence.*;
-import java.io.Serializable;
-
-@Entity
-public class Posicao implements Serializable {
-    private static final long serialVersionUID = 1L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
+public class Posicao {
     private int x;
     private int y;
 
-    private Cliente cliente;
+    public Posicao(){}
 
-    public Posicao() {}
-
-    public Posicao(Integer id, int x, int y) {
-        this.id = id;
+    public Posicao(int x, int y){
         this.x = x;
         this.y = y;
     }
@@ -38,14 +25,5 @@ public class Posicao implements Serializable {
 
     public int getY() {
         return y;
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
     }
 }

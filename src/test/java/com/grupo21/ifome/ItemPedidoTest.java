@@ -3,9 +3,9 @@ package com.grupo21.ifome;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 
-import com.grupo21.ifome.Entidades.ItemPedido;
-import com.grupo21.ifome.Entidades.Pedido;
-import com.grupo21.ifome.Entidades.Produto;
+import com.grupo21.ifome.entidades.ItemPedido;
+import com.grupo21.ifome.entidades.Pedido;
+import com.grupo21.ifome.entidades.Produto;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,22 +22,24 @@ public class ItemPedidoTest {
         prod = mock(Produto.class);
 
         ip1 = new ItemPedido();
-        ip2 = new ItemPedido(p, prod, 12, 32.2);
+        ip2 = new ItemPedido("nome", 12, 32.2);
     }
 
     @Test
-    public void testGetPedido() {
-        assertEquals(p, ip2.getPedido());
+    public void testGetNome() {
+        assertEquals("nome", ip2.getNome());
     }
 
     @Test
-    public void testGetProduto() {
-        assertEquals(prod, ip2.getProduto());
+    public void testAumentaQtd() {
+        ip1.setQuantidade(2);
+        ip1.aumentaQtd();
+        assertEquals(3, ip1.getQuantidade());
     }
 
     @Test
-    public void testGetPreco() {
-        assertEquals(32.2, ip2.getPreco());
+    public void testGetValorUnitario() {
+        assertEquals(32.2, ip2.getValorUnitario());
     }
 
     @Test
@@ -46,29 +48,10 @@ public class ItemPedidoTest {
     }
 
     @Test
-    public void testGetSubtotal() {
-        assertEquals(32.2 * 12, ip2.getSubTotal());
-    }
+    public void testSetValorUnitario() {
+        ip1.setValorUnitario(15.3);
 
-    @Test
-    public void testSePedido() {
-        ip1.setPedido(p);
-
-        assertEquals(p, ip1.getPedido());
-    }
-
-    @Test
-    public void testSetProduto() {
-        ip1.setProduto(prod);
-
-        assertEquals(prod, ip1.getProduto());
-    }
-
-    @Test
-    public void testSetPreco() {
-        ip1.setPreco(15.3);
-
-        assertEquals(15.3, ip1.getPreco());
+        assertEquals(15.3, ip1.getValorUnitario());
     }
 
     @Test
@@ -76,5 +59,11 @@ public class ItemPedidoTest {
         ip1.setQuantidade(13);
 
         assertEquals(13, ip1.getQuantidade());
+    }
+
+    @Test
+    public void testSetNome(){
+        ip1.setNome("n");
+        assertEquals("n", ip1.getNome());
     }
 }

@@ -1,104 +1,39 @@
-package com.grupo21.ifome.Entidades;
+package com.grupo21.ifome.entidades;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import javax.persistence.*;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
-@Entity
-public class Cliente implements Serializable {
-    private static final long serialVersionUID = 1L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
-    private String nome;
-
-    private String email;
-
+public class Cliente {
     private String cpf;
-    private Posicao posicao;
+    private String nome;
+    private Posicao pos;
 
-    @JsonIgnore
-    private String senha;
+    public Cliente(){}
 
-    @JsonBackReference
-    @OneToMany(mappedBy = "cliente")
-    private List<Pedido> pedidos = new ArrayList<>();
-
-    public Cliente(){ }
-
-    public Cliente(Integer id, String nome, String email, String cpf, Posicao posicao, String senha) {
-        this.id = id;
+    public Cliente(String nome, String cpf, Posicao pos){
         this.nome = nome;
-        this.email = email;
         this.cpf = cpf;
-        this.posicao = posicao;
-        this.senha = senha;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+        this.pos = pos;
     }
 
     public String getCpf() {
         return cpf;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public Posicao getPos() {
+        return pos;
+    }
+
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
-    public List<Pedido> getPedidos() {
-        return pedidos;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public void setPedidos(List<Pedido> pedidos) {
-        this.pedidos = pedidos;
-    }
-
-    public Posicao getPosicao() {
-        return posicao;
-    }
-
-    public void setPosicao(Posicao posicao) {
-        this.posicao = posicao;
-    }
-
-    public String getSenha() { return senha; }
-
-    public void setSenha(String senha) { this.senha = senha; }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public void setPos(Posicao pos) {
+        this.pos = pos;
     }
 }
