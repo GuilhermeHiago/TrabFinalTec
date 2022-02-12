@@ -1,4 +1,6 @@
-﻿# Trabalho Final de Tecnicas de Programação
+# Trabalho Final de Tecnicas de Programação
+Site de delivery, backend Java (Maven e Springboot), frontend HTML, CSS e JavaScript
+
 #### Grupo 21: Guilherme Hiago Santos e Suane Vallim
 
 ## Objetivos do sistema
